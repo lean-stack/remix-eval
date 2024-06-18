@@ -1,0 +1,30 @@
+{
+  "include": ["app/**/*.ts", "app/**/*.tsx"],
+  "compilerOptions": {
+    // Base
+    "lib": ["DOM", "DOM.Iterable", "ES2023"],
+    "types": ["@remix-run/node", "vite/client"],
+    "target": "ES2022",
+    "skipLibCheck": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+
+    // Strictness
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+
+    // Vite as Bundler
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+
+    // React
+    "jsx": "react-jsx",
+
+    // DX (Shorten the app path)
+    "paths": {
+      "#*": ["./app/*"]
+    }
+  }
+}
