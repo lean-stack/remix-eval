@@ -1,6 +1,20 @@
-import { Form } from '@remix-run/react';
+import type { LoaderFunctionArgs } from '@remix-run/node';
+import { Form, json, useActionData } from '@remix-run/react';
+
+export async function action({ request }: LoaderFunctionArgs) {
+  const data = await request.formData();
+
+  const resourceId = Number(data.get('resourceId'));
+
+  // Here is my API interaction point
+  console.log(`Resource ${resourceId} should be updated`);
+
+  return json({ success: `Resource ${resourceId} successfully updated.` });
+}
 
 export default function DashobardRoute() {
+  const actionData = useActionData<typeof action>();
+
   return (
     <div>
       <h1 className="text-2xl font-semibold">Manager: Backend Feature</h1>
@@ -12,7 +26,7 @@ export default function DashobardRoute() {
           backend
         </li>
       </ul>
-      <Form className="flex flex-col gap-y-4">
+      <Form className="flex flex-col gap-y-4" method="POST">
         <label>
           <span>Resource: </span>
           <input className="py-1.5 px-2" name="resourceId" defaultValue={42} />
@@ -24,6 +38,9 @@ export default function DashobardRoute() {
           Change Data
         </button>
       </Form>
+      {actionData && (
+        <div className="mt-4 text-green-700">{actionData.success}</div>
+      )}
     </div>
   );
 }
