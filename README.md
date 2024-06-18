@@ -15,7 +15,7 @@ listeners? I am looking for the single best place. My first idea was to place th
 backend layout loader (i do not need this in the frontend) - but of course i am registering listeners too
 often then.
 
-So is the only place a (here not present) server.js file?
+So is the only place a (here not present) custom server.js?
 
 ## Relevant files
 

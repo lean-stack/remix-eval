@@ -21,7 +21,7 @@ export default function DashobardRoute() {
     <div>
       <h1 className="text-2xl font-semibold">Manager: Backend Feature</h1>
       <ul className="my-4 pl-8 list-disc">
-        <li>Backend feature is secured via ramix-auth</li>
+        <li>Backend feature is secured via remix-auth</li>
         <li>Typically loads data from sqlite</li>
         <li>
           Actions should modify sqlite data and as well a legacy firestore
