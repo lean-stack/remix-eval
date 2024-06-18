@@ -13,7 +13,7 @@ firestore data in-sync for the legacy app.
 My idea was to use a simple EventEmitter event bus. But where should i register the two event
 listeners? I am looking for the single best place. My first idea was to place them into the
 backend layout loader (i do not need this in the frontend) - but of course i am registering listeners too
-often then.
+often then. Any loader (root as well) won't work. Was a silly idea.
 
 So is the only place a (here not present) custom server.js?
 
