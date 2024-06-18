@@ -16,3 +16,10 @@ backend layout loader (i do not need this in the frontend) - but of course i am 
 often then.
 
 So is the only place a (here not present) server.js file?
+
+## Relevant files
+
+- `app/routes/manager._index.tsx`: Sample route with action that emits the event
+- `app/utils/api-bus.server.ts`: The very simple event bus
+- `app/utils/firestore/listener.server.ts`: The firestore listener
+- `app/utils/sqlite/listener.server.ts`: The sqlite listener
