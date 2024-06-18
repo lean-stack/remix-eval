@@ -1,3 +1,4 @@
+import { apiBus } from '#utils/api-bus.server';
 import type { LoaderFunctionArgs } from '@remix-run/node';
 import { Form, json, useActionData } from '@remix-run/react';
 
@@ -8,6 +9,7 @@ export async function action({ request }: LoaderFunctionArgs) {
 
   // Here is my API interaction point
   console.log(`Resource ${resourceId} should be updated`);
+  apiBus.emit({ name: 'UPDATE', payload: resourceId });
 
   return json({ success: `Resource ${resourceId} successfully updated.` });
 }

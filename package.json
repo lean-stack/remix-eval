@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
+  "imports": {
+    "#*": "./app/*"
+  },
   "scripts": {
     "build": "remix vite:build",
     "dev": "remix vite:dev",
@@ -22,6 +25,7 @@
     "@biomejs/biome": "1.8.1",
     "@remix-run/dev": "^2.9.2",
     "@tailwindcss/vite": "^4.0.0-alpha.16",
+    "@types/node": "^20.14.5",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "tailwindcss": "^4.0.0-alpha.16",
